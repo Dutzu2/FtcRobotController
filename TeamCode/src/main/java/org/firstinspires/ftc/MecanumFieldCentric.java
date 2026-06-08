@@ -9,7 +9,7 @@ import org.firstinspires.ftc.mecanisme.FieldDrive;
 public class MecanumFieldCentric extends OpMode {
 
     FieldDrive drive = new FieldDrive();
-    double x, y, rotate;
+    double forward, strafe, rotate;
 
 
 
@@ -20,10 +20,10 @@ public class MecanumFieldCentric extends OpMode {
 
     @Override
     public void loop() {
-        y = -gamepad1.left_stick_y;
-        x = gamepad1.left_stick_x;
+        forward = -gamepad1.left_stick_y;
+        strafe = gamepad1.left_stick_x;
         rotate = gamepad1.right_stick_x;
 
-        drive.fieldMode(y,x,rotate);
+        drive.fieldMode(forward,strafe,rotate);
     }
 }
